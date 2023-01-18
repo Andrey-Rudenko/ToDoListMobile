@@ -11,6 +11,7 @@ import ru.andreyrudenko.todolist.APP
 import ru.andreyrudenko.todolist.R
 import ru.andreyrudenko.todolist.adapter.NoteAdapter
 import ru.andreyrudenko.todolist.databinding.FragmentStartBinding
+import ru.andreyrudenko.todolist.model.NoteModel
 
 class StartFragment : Fragment() {
     lateinit var binding: FragmentStartBinding
@@ -37,11 +38,18 @@ class StartFragment : Fragment() {
         adapter = NoteAdapter()
         recyclerView.adapter = adapter
         viewModel.getAllNotes().observe(viewLifecycleOwner) { listNotes ->
-            listNotes.asReversed()
-            adapter.setList(listNotes)
+            adapter.setList(listNotes.asReversed())
         }
         binding.btnNext.setOnClickListener{
             APP.navController.navigate(R.id.action_startFragment_to_addNoteFragment)
+        }
+    }
+    companion object {
+        fun clickNote(noteModel: NoteModel) {
+            val bundle = Bundle()
+            bundle.putSerializable("note", noteModel)
+            APP.navController.navigate(R.id.action_startFragment_to_detailFragment, bundle)
+
         }
     }
 }
