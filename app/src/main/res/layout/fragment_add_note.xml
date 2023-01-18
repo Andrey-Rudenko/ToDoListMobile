@@ -10,20 +10,22 @@
         android:id="@+id/et_add_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Title"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="50dp"
-        android:hint="Title"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_add_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Description"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_add_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_add_title" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_add_note"
