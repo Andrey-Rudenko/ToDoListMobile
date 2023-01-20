@@ -32,8 +32,10 @@ class AddNoteFragment : Fragment() {
         binding.btnAddNote.setOnClickListener {
             val title = binding.etAddTitle.text.toString()
             val description = binding.etAddDesc.text.toString()
-            viewModel.insert(NoteModel(title = title, description = description)){}
-            APP.navController.navigate(R.id.action_addNoteFragment_to_startFragment)
+            if (title.replace("\\s".toRegex(), "").isNotEmpty()) {
+                viewModel.insert(NoteModel(title = title, description = description)){}
+                APP.navController.navigate(R.id.action_addNoteFragment_to_startFragment)
+            }
         }
         binding.btnBack.setOnClickListener {
             APP.navController.navigate(R.id.action_addNoteFragment_to_startFragment)
