@@ -27,6 +27,8 @@ class NoteAdapter: RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
         return listNote.size
     }
 
+
+
     @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<NoteModel>) {
         listNote = list
