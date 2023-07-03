@@ -40,11 +40,13 @@ class StartFragment : Fragment() {
         viewModel.getAllNotes().observe(viewLifecycleOwner) { listNotes ->
             adapter.setList(listNotes.asReversed())
         }
+        //Переход на фрагмент AddNote
         binding.btnNext.setOnClickListener{
             APP.navController.navigate(R.id.action_startFragment_to_addNoteFragment)
         }
     }
     companion object {
+        //Переход на фрагмент DetailFragment
         fun clickNote(noteModel: NoteModel) {
             val bundle = Bundle()
             bundle.putSerializable("note", noteModel)

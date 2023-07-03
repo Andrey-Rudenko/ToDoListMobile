@@ -37,7 +37,7 @@ class DetailFragment : Fragment() {
             viewModel.delete(currentNote){}
             APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
         }
-
+        //переход на фрагмент startFragment
         binding.btnBack.setOnClickListener {
             APP.navController.navigate(R.id.action_detailFragment_to_startFragment)
         }

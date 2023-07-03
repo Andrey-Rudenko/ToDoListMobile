@@ -1,5 +1,6 @@
 package ru.andreyrudenko.todolist.screens.addNote
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,14 +17,17 @@ class AddNoteFragment : Fragment() {
     lateinit var binding: FragmentAddNoteBinding
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
         binding = FragmentAddNoteBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
         super.onViewCreated(view, savedInstanceState)
         init()
     }
@@ -37,10 +41,60 @@ class AddNoteFragment : Fragment() {
                 APP.navController.navigate(R.id.action_addNoteFragment_to_startFragment)
             }
         }
+        //переход на фрагмент startFragment
         binding.btnBack.setOnClickListener {
             APP.navController.navigate(R.id.action_addNoteFragment_to_startFragment)
         }
 
     }
 
+    override fun onAttach(context: Context) {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onAttach(context)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onCreate(savedInstanceState)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onActivityCreated(savedInstanceState)
+    }
+
+    override fun onStart() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onStart()
+    }
+
+    override fun onResume() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onResume()
+    }
+
+    override fun onPause() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onPause()
+    }
+
+    override fun onStop() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onDestroyView()
+    }
+
+    override fun onDestroy() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onDestroy()
+    }
+
+    override fun onDetach() {
+        println(object : Any(){}.javaClass.enclosingMethod?.name  + " AddNoteFragment")
+        super.onDetach()
+    }
 }
